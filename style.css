@@ -1,0 +1,553 @@
+
+:root {
+    --bg: #D1D5DB;
+    --card: #E0E2E6;
+    --border: #B8BEC8;
+    --text: #354052;
+    --muted: #586274;
+    --accent: #3D5A99;
+    --accent-soft: #C7D2E8;
+    --sidebar: #D9DDE3;
+    --shadow: 0 8px 24px rgba(45, 55, 72, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 245px;
+    padding: 32px 20px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.logo {
+    margin: 0 0 42px;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.side-label,
+.eyebrow {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.side-label {
+    margin: 0 0 14px 10px;
+}
+
+nav {
+    display: grid;
+    gap: 7px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 13px 14px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    text-align: left;
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    background: var(--card);
+}
+
+.nav-item.active {
+    background: var(--accent);
+    color: #FFFFFF;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.sidebar-bottom span {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+.main {
+    max-width: 1500px;
+    margin-left: 245px;
+    padding: 38px 5%;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.topbar .eyebrow {
+    margin: 0 0 8px;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: clamp(25px, 3vw, 34px);
+    letter-spacing: -1.2px;
+}
+
+.today {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.welcome {
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.welcome .eyebrow {
+    margin-bottom: 12px;
+}
+
+.welcome h2 {
+    margin-bottom: 10px;
+    font-size: clamp(25px, 3vw, 35px);
+    letter-spacing: -1px;
+}
+
+.welcome > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 12px 17px;
+    border-radius: 9px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.primary-btn {
+    margin-top: 12px;
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+}
+
+.primary-btn:hover {
+    filter: brightness(1.1);
+}
+
+.primary-btn span {
+    margin-left: 12px;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 35px 0 17px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 7px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.stat-card p {
+    margin-bottom: 17px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-card h3 {
+    margin-bottom: 12px;
+    font-size: 29px;
+    letter-spacing: -1px;
+}
+
+.stat-card h3 small {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.stat-card > span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.schedule-heading {
+    margin-top: 37px;
+}
+
+.text-btn {
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.schedule-card {
+    min-height: 200px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.empty-state {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 28px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.empty-state p {
+    margin-bottom: 13px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (min-width: 1500px) {
+    .main {
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 190px;
+        padding: 25px 13px;
+    }
+
+    .main {
+        margin-left: 190px;
+        padding: 28px 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding: 18px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .side-label,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 3px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 25px 16px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .welcome {
+        padding: 24px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .muted {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   HOURPILOT — APPEARANCE SYSTEM
+   ======================================== */
+
+/* Dark theme */
+body.dark-theme {
+    --bg: #111318;
+    --card: #1b1e26;
+    --text: #edf0f7;
+    --muted: #a0a6b7;
+    --border: #303542;
+    --accent: #8ba7ff;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    --sidebar: #191c24;
+}
+
+body.dark-theme .welcome {
+    background: linear-gradient(135deg, #20283b, #20202d);
+}
+
+
+/* Refined form styling */
+.planner-card input,
+.planner-card select,
+.planner-card textarea,
+.setting-select {
+    box-sizing: border-box;
+    padding: 12px 14px;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    transition: border-color 180ms ease,
+                box-shadow 180ms ease,
+                background 180ms ease;
+}
+
+.planner-card input:hover,
+.planner-card select:hover,
+.planner-card textarea:hover,
+.setting-select:hover {
+    border-color: var(--accent);
+}
+
+.planner-card input:focus-visible,
+.planner-card select:focus-visible,
+.planner-card textarea:focus-visible,
+.setting-select:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(100, 130, 255, 0.18);
+}
+
+.planner-card input::placeholder,
+.planner-card textarea::placeholder {
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+
+/* Appearance settings */
+.settings-card {
+    margin-top: 24px;
+    padding: 26px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.settings-group {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-group:last-child {
+    border-bottom: none;
+}
+
+.settings-group h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.settings-group p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.setting-select {
+    width: 100%;
+    max-width: 320px;
+    padding: 11px 12px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .planner-card input,
+    .setting-select {
+        transition: none;
+    }
+}
+
+
+/* Add breathing room between labels and input boxes */
+.planner-card label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+/* Matching task ticks for Home and Tasks */
+.task-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+    background: var(--bg);
+    transition: background 180ms ease,
+                border-color 180ms ease,
+                color 180ms ease;
+}
+
+.task-status.is-complete {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Custom checkbox in the Tasks menu */
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-grid;
+    place-content: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    margin: 0 12px 0 0;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    background: var(--bg);
+    cursor: pointer;
+    transition: background 180ms ease,
+                border-color 180ms ease;
+}
+
+.task-checkbox:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.task-checkbox:checked::after {
+    content: "✓";
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.task-checkbox:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
